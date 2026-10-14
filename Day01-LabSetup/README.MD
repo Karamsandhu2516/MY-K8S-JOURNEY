@@ -72,7 +72,7 @@ If you encounter `shell failed: ssh connection failed: 'Failed to connect: No ro
 
 The Kubernetes tools are installed across all nodes (`k8s-control-plane`, `k8s-worker-1`, `k8s-worker-2`) using the official Kubernetes package repository:
 
-```bash
+``` bash
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 
@@ -85,10 +85,18 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo systemctl enable --now kubelet
+```
 
----
+## Lab Task 9: Verify Installation
 
-## Lab Task 10: Verify Node Connectivity
+Check version information for each component across the nodes:
+``` bash
+kubeadm version
+kubectl version --client
+kubelet --version 
+```
+
+## Lab Task 10 : Verify Node Connectivity
 
 from control-plane to worker-node
 ```bash
