@@ -85,3 +85,17 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo systemctl enable --now kubelet
+
+---
+
+## Lab Task 10: Verify Node Connectivity
+
+from control-plane to worker-node
+```bash
+ping -c 3 k8s-worker-1
+ping -c 3 k8s-worker-2
+
+From the worker nodes
+ping -c 3 k8s-control-plane
+
+Verification: Successful communication (0% packet loss) confirms the network environment is fully prepared for cluster initialization.
