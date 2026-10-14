@@ -64,10 +64,11 @@ If you encounter `shell failed: ssh connection failed: 'Failed to connect: No ro
 2. Locate **Visual Studio Code** (or your terminal application like iTerm/Terminal) and ensure it is **toggled ON** to allow finding and communicating with devices on your local network.
 3. Restart your Multipass instances if necessary:
    ```bash
-   multipass restart --all
+   multipass restart --all ```
 
 
-   ## Lab Task 8: Install Kubernetes Components
+   
+## Lab Task 8: Install Kubernetes Components
 
 The Kubernetes tools are installed across all nodes (`k8s-control-plane`, `k8s-worker-1`, `k8s-worker-2`) using the official Kubernetes package repository:
 
