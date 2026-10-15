@@ -1,4 +1,5 @@
 ## Day 2: Kubernetes Architecture
+![Kubernetes Architecture](./images/k8s-architecture.png)
 
 ###  What is K8S and why required K8S?
 
