@@ -414,3 +414,6 @@ kubectl cluster-info
 ```
 
 Most `kubectl` connection issues originate from missing or incorrect kubeconfig files.
+
+## Configuration
+![kubeconfig Output](images/output.png)
