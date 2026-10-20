@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: support-app
+spec:
+  containers:
+    - name: web
+      image: nginx:1.28
