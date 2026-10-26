@@ -186,5 +186,5 @@ kubectl exec config-demo -- ls /etc/db-secret
 3. **A Pod is stuck in `CreateContainerConfigError`. What do you check?**
    → Whether the referenced ConfigMap, Secret or key exists in the same Namespace. Use `kubectl describe pod` to read the event.
 
-   ![config Output](images/ns.png)
+   ![config Output](images/output.png)
    
