@@ -123,6 +123,8 @@ A database migration can be a Job, but you do not automatically create one for e
 
 Because the container has finished running. It is no longer running and ready to serve requests, but its completion status is recorded. This is expected for a Job.
 
+![job Output](images/output.png)
+
 
 ## Key takeaway
 
