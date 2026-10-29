@@ -1,0 +1,14 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: report-job
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: report
+          image: busybox:1.36
+          command: ["sh", "-c", "echo 'Generating sales report'; sleep 10; echo 'Report completed'"]
