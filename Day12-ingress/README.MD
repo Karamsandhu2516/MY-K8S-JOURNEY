@@ -117,8 +117,8 @@ On a vanilla **kubeadm** cluster there is no cloud provider integration, so Kube
 The Service still gets **NodePorts**, which we use in this lab:
 
 ```
-HTTP  → 30472
-HTTPS → 32201
+HTTP  → 30412
+HTTPS → 32658
 ```
 
 Your NodePort numbers will be different. Always read them from `kubectl get svc`.
@@ -252,36 +252,6 @@ Without the right `Host` header this returns **404** from the controller's defau
 
 ---
 
-## 10. Optional: TLS
-
-Create a self-signed certificate and Secret:
-
-```bash
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-  -keyout tls.key -out tls.crt \
-  -subj "/CN=mydemo.local/O=demo"
-
-kubectl create secret tls demo-tls --cert=tls.crt --key=tls.key -n demo
-```
-
-Add this to the Ingress `spec`:
-
-```yaml
-  tls:
-    - hosts:
-        - mydemo.local
-      secretName: demo-tls
-```
-
-Test over the HTTPS NodePort (`-k` skips verification for the self-signed certificate):
-
-```bash
-curl -vk --resolve mydemo.local:32201:192.168.252.9 https://mydemo.local:32201/app1
-```
-
-TLS terminates at the Ingress Controller, and traffic to the Pods is plain HTTP inside the cluster.
-
----
 
 ## 11. Troubleshooting
 
