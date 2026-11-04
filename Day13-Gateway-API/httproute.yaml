@@ -5,19 +5,32 @@ metadata:
   namespace: demo
 spec:
   parentRefs:
-  - name: demo-gateway
+    - name: demo-gateway
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /app1
-    backendRefs:
-    - name: app1-service
-      port: 80
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /app2
-    backendRefs:
-    - name: app2-service
-      port: 80
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /app1
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
+        - name: app1-service
+          port: 80
+
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /app2
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
+        - name: app2-service
+          port: 80
