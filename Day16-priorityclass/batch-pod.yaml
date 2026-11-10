@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: batch-app
+  labels:
+    app: batch-app
+spec:
+  priorityClassName: batch-low
+  containers:
+    - name: nginx
+      image: nginx:1.27
