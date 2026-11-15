@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-no-token
+  namespace: sa-lab
+spec:
+  serviceAccountName: app-sa
+  automountServiceAccountToken: false
+  containers:
+    - name: nginx
+      image: nginx:1.28
