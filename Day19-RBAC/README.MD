@@ -1,7 +1,5 @@
 # Day 19: Kubernetes RBAC (Role-Based Access Control)
 
-![RBAC diagram](rbac-diagram.png)
-
 ## 1. What is RBAC in Kubernetes?
 
 **RBAC (Role-Based Access Control)** is the Kubernetes authorization mechanism that controls **what actions users, groups and Service Accounts can perform on Kubernetes resources**.
